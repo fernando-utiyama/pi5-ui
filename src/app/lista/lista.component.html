@@ -1,0 +1,30 @@
+<section class="container">
+  <form action="lista">
+    <h2 class="lista_titulo">Experiências realizadas</h2>
+    <div class="form-field">
+        <table>
+            <thead>
+                <tr>
+                    <th>Command</th>
+                    <th>Data / hora</th>
+                    <th>Medidas</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let registro of registros">
+                    <td>{{ registro.command}}</td>
+                    <td>{{ registro.dateTime }}</td>
+                    <td>{{ registro.medidas }}</td>
+                    <td>{{ registro.arduinoStatus }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="button-wrapper">
+      <button class="botao" routerLink="/experimento" >Nova experiência</button>
+    </div>
+
+  </form>
+</section>
