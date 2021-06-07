@@ -9,17 +9,38 @@ import { Observable,from } from 'rxjs';
 })
 export class ExperimentoService {
 
-  configUrl = '<http://localhost:8080>';
+  private readonly API = '/api/request';
 
   constructor(private http: HttpClient) {
 
   }
 
-  postCommand() {
-    let experimento = new Experimento();
-    experimento.command = '1111'
-    experimento.dateTime = '2021-06-05 10:37'
-    experimento.medidas = 'Volume 1: 103, Massa 1: 100g, Volume 2: 113, Massa 2: 105g'
-    return this.http.post<Experimento>(this.configUrl, experimento);
+  postCommand(volume1: boolean, volume2: boolean, peso1: boolean, peso2: boolean) {
+    console.log("Enviou comando");
+    var comando: string = ""; 
+    if (volume1 == false) {
+      comando = comando.concat("0")
+    } else {
+      comando = comando.concat("1")
+    }
+    if (volume2 == false) {
+      comando = comando.concat("0")
+    } else {
+      comando = comando.concat("1")
+    }
+    if (peso1 == false) {
+      comando = comando.concat("0")
+    } else {
+      comando = comando.concat("1")
+    }
+    if (peso2 == false) {
+      comando = comando.concat("0")
+    } else {
+      comando = comando.concat("1")
+    }
+
+    var experimento = { command: comando };
+    return this.http.post<any>(this.API, experimento)
   }
+
 }

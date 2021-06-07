@@ -10,13 +10,17 @@ import { tap } from 'rxjs/operators';
 })
 export class ListaService {
 
-  private readonly API = 'http://localhost:8080/allrequests';
+  private readonly API = '/api/allrequests';
 
   constructor(private http: HttpClient) {
 
   }
 
   list() {
+
+    return this.http.get<Registro[]>(this.API)
+    .pipe(tap(console.log));
+
     //let registros: Registro[] = [];
 
     //let registroum = new Registro();
@@ -35,9 +39,5 @@ export class ListaService {
 
     //let ob: Observable<Registro> = from(registros);
     //return ob;
-
-    return this.http.get<Registro[]>(this.API)
-    .pipe(tap(console.log));
-
   }
 }

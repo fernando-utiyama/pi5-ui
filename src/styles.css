@@ -11,8 +11,14 @@
   font-family: "Roboto", sans-serif;
 }
 
+.navbar {  
+  background-color: rgb(65, 134, 180);
+  max-height: 200px;
+  display: flex;
+}
+
 .container {
-  max-width: 5000px;
+  max-width: 6000px;
   padding: 30px;
   margin: 0 auto;
 }
@@ -26,8 +32,22 @@
   color: var(--primary);
 }
 
+.medidas {
+  width: 60%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  padding: 30px;
+}
+
+.table {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-spacing: 10px;
+}
+
 .select {
-  width: 40%;
+  width: 50%;
   margin-top: 15px;
   margin-bottom: 15px;
   display: flex;
@@ -51,6 +71,8 @@
 
 .botao-wrapper {
   display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .botao {

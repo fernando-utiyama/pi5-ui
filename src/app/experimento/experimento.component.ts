@@ -1,3 +1,4 @@
+import { ExperimentoService } from './experimento.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,16 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperimentoComponent implements OnInit {
 
-  command: number | undefined;
+  command: number = 1111;
 
   volume1: boolean = false;
   volume2: boolean = false;
   peso1: boolean = false;
   peso2: boolean = false;
 
-  constructor() { }
+  medidas: string = "Aguardando";
+
+  constructor(private experimentoService: ExperimentoService) { }
 
   enviar() {
+    this.experimentoService.postCommand(this.volume1, this.volume2, this.peso1, this.peso2).subscribe(
+      resultado => {
+        this.medidas = resultado.medidas;
+      },
+      erro => {
+        if(erro.status == 400) {
+          console.log(erro);
+        }
+      }
+    );
     console.log('command', this.command);
     console.log('volume1', this.volume1);
     console.log('volume2', this.volume2);

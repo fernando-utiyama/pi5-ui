@@ -83,7 +83,8 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pi5-ui:build"
+            "browserTarget": "pi5-ui:build",
+            "proxyConfig": "src/proxy.conf.json"
           }
         },
         "test": {
