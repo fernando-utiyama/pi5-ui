@@ -19,7 +19,7 @@ import { Component } from '@angular/core';
 
   <!-- footer -->
   <footer class="footer">
-  <div class="container">
+  <div class="footer">
   <div class="content has-text-centered">
     <p> <img src='/assets/logo-univesp.png'><a href="http://univesp-campinas-pi5-ui.herokuapp.com/">EngLabs</a>
     </p>

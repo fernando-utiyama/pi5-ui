@@ -17,6 +17,12 @@
   display: flex;
 }
 
+.footer {  
+  background-color: rgb(65, 134, 180);
+  max-height: 175px;
+  display: flex;
+}
+
 .container {
   max-width: 6000px;
   padding: 30px;
