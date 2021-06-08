@@ -18,8 +18,7 @@
 }
 
 .footer {  
-  background-color: rgb(65, 134, 180);
-  max-height: 175px;
+  max-height: 150px;
   display: flex;
 }
 
