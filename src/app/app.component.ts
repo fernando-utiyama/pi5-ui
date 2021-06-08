@@ -22,7 +22,7 @@ import { Component } from '@angular/core';
   <div class="container">
   <div class="content has-text-centered">
     <p>
-      UNIVESP <a href="http://107.21.187.195:4200">EngLab</a>
+      UNIVESP - <a href="http://univesp-campinas-pi5-ui.herokuapp.com/">EngLab</a>
     </p>
   </div>
   </div>
