@@ -10,7 +10,7 @@ import { tap } from 'rxjs/operators';
 })
 export class ListaService {
 
-  private readonly API = 'https://univesp-campinas-pi5.herokuapp.com/api/allrequests';
+  private readonly API = '/api/allrequests';
 
   constructor(private http: HttpClient) {
 

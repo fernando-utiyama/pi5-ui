@@ -76,6 +76,9 @@
             },
             "development": {
               "browserTarget": "pi5-ui:build:development"
+            },
+            "options": {
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

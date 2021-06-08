@@ -9,7 +9,7 @@ import { Observable,from } from 'rxjs';
 })
 export class ExperimentoService {
 
-  private readonly API = 'https://univesp-campinas-pi5.herokuapp.com/api/request';
+  private readonly API = '/api/request';
 
   constructor(private http: HttpClient) {
 
