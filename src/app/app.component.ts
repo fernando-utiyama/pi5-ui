@@ -21,8 +21,7 @@ import { Component } from '@angular/core';
   <footer class="footer">
   <div class="container">
   <div class="content has-text-centered">
-    <p>
-      UNIVESP - <a href="http://univesp-campinas-pi5-ui.herokuapp.com/">EngLab</a>
+    <p> <img src='/assets/logo-univesp.png'><a href="http://univesp-campinas-pi5-ui.herokuapp.com/">EngLabs</a>
     </p>
   </div>
   </div>
