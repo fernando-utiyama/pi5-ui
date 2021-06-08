@@ -21,7 +21,7 @@ import { Component } from '@angular/core';
   <footer class="footer">
   <div class="footer">
   <div class="content has-text-centered">
-    <p> <img src='/assets/logo-univesp.png'><a href="http://univesp-campinas-pi5-ui.herokuapp.com/">EngLabs</a>
+    <p> <img src='/assets/logo-univesp.png'><a href="http://univesp-campinas-pi5-ui.herokuapp.com/">EngLabs - 2021 - Universidade Virtual do Estado de São Paulo - Campinas - SP</a>
     </p>
   </div>
   </div>
