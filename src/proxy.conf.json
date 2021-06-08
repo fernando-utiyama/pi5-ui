@@ -1,0 +1,9 @@
+{
+  "/api/*": {
+      "target": "https://univesp-campinas-pi5.herokuapp.com",
+      "secure": "false",
+      "logLevel": "debug",
+      "changeOrigin": true
+  }
+}
+
