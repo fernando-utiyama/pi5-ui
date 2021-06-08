@@ -23,12 +23,12 @@ export class ExperimentoService {
     } else {
       comando = comando.concat("1")
     }
-    if (volume2 == false) {
+    if (peso1 == false) {
       comando = comando.concat("0")
     } else {
       comando = comando.concat("1")
     }
-    if (peso1 == false) {
+    if (volume2 == false) {
       comando = comando.concat("0")
     } else {
       comando = comando.concat("1")
