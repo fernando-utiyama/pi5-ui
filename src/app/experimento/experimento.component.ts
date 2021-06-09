@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperimentoComponent implements OnInit {
 
-  command: number = 1111;
+  loading: boolean = false;
 
   volume1: boolean = false;
   volume2: boolean = false;
@@ -20,6 +20,7 @@ export class ExperimentoComponent implements OnInit {
   constructor(private experimentoService: ExperimentoService) { }
 
   enviar() {
+    this.loading = true;
     this.experimentoService.postCommand(this.volume1, this.volume2, this.peso1, this.peso2).subscribe(
       resultado => {
         this.medidas = resultado.medidas;
@@ -27,10 +28,11 @@ export class ExperimentoComponent implements OnInit {
       erro => {
         if(erro.status == 400) {
           console.log(erro);
+          this.loading = false;
         }
       }
     );
-    console.log('command', this.command);
+    this.loading = false;
     console.log('volume1', this.volume1);
     console.log('volume2', this.volume2);
     console.log('peso1', this.peso1);

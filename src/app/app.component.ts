@@ -23,7 +23,7 @@ import { Component } from '@angular/core';
   <div class="content has-text-centered">
     <p> <img src='/assets/Univesp_logo.jpg'></p>
     <p>
-    <a href="http://univesp-campinas-pi5-ui.herokuapp.com/"> EngLabs </a> <a>2021 - Universidade Virtual do Estado de São Paulo - Campinas - SP</a>
+    <a href="http://univesp-campinas-pi5-ui.herokuapp.com/">EngLabs</a> <a> 2021 - Universidade Virtual do Estado de São Paulo - Campinas - SP</a>
     </p>
   </div>
   </div>
