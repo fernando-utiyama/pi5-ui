@@ -12,12 +12,11 @@
 }
 
 .navbar {  
-  max-height: 175px;
+  width: 100%;
   display: flex;
 }
 
 .footer {  
-  max-height: 150px;
   display: flex;
 }
 
