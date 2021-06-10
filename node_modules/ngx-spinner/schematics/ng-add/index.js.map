@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../projects/ngx-spinner/schematics/ng-add/index.ts"],"names":[],"mappings":";;AACA,4DAA0E;AAE1E,uBAAuB;AACvB,mBAAyB,QAAa;IACpC,OAAO,CAAC,IAAU,EAAE,OAAyB,EAAE,EAAE;QAC/C,uEAAuE;QACvE,2FAA2F;QAC3F,OAAO,CAAC,OAAO,CAAC,IAAI,8BAAsB,EAAE,CAAC,CAAC;QAC9C,OAAO,IAAI,CAAC;IACd,CAAC,CAAC;AACJ,CAAC;AAPD,4BAOC"}
