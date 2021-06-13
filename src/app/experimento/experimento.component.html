@@ -55,12 +55,12 @@
       <thead> 
         <tbody>
           <tr>
-            <th><button class="botao" type="submit">Enviar <i class="fa fa-spinner fa-spin" *ngIf="loading"></i> </button></th>
+            <th><button class="botao" type="submit">Enviar</button></th>
             <th><button class="botao" routerLink="" >Voltar</button></th>
         <tr>
     </table>
     <label for="medidas">Medidas: </label>
-    <label [(ngModel)]="medidas">{{medidas}}</label>
+    <label [(ngModel)]="medidas" name="medidas" ngDefaultControl >{{medidas}}</label>
   </form>
   <div class="form-field">
     <div>
