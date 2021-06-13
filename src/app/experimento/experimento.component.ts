@@ -24,6 +24,7 @@ export class ExperimentoComponent implements OnInit {
     this.experimentoService.postCommand(this.volume1, this.volume2, this.peso1, this.peso2).subscribe(
       resultado => {
         this.medidas = resultado.medidas;
+        console.log('medidas', this.medidas);
       },
       erro => {
         if(erro.status == 400) {
