@@ -1,5 +1,6 @@
 import { ExperimentoService } from './experimento.service';
 import { Component, OnInit } from '@angular/core';
+import { timeout } from 'rxjs/operators';
 
 @Component({
   selector: 'app-experimento',
@@ -21,10 +22,11 @@ export class ExperimentoComponent implements OnInit {
 
   enviar() {
     this.loading = true;
-    this.experimentoService.postCommand(this.volume1, this.volume2, this.peso1, this.peso2).subscribe(
+    this.experimentoService.postCommand(this.volume1, this.volume2, this.peso1, this.peso2)
+    .pipe(timeout(60000))
+    .subscribe(
       resultado => {
         this.medidas = resultado.medidas;
-        console.log('medidas', this.medidas);
       },
       erro => {
         if(erro.status == 400) {
@@ -33,9 +35,6 @@ export class ExperimentoComponent implements OnInit {
         }
       }
     );
-    if (this.medidas == "") {
-      this.medidas = "Erro"
-    }
     this.loading = false;
     console.log('volume1', this.volume1);
     console.log('volume2', this.volume2);
