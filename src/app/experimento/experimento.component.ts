@@ -32,6 +32,9 @@ export class ExperimentoComponent implements OnInit {
         }
       }
     );
+    if (this.medidas == "") {
+      this.medidas = "Erro"
+    }
     this.loading = false;
     console.log('volume1', this.volume1);
     console.log('volume2', this.volume2);
