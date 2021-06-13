@@ -6,6 +6,7 @@ import { MatSliderModule } from '@angular/material/slider';
 
 const routes: Routes = [
   {path: '', component: ListaComponent},
+  {path: 'lista', component: ListaComponent},
   {path: 'experimento',component: ExperimentoComponent}
 ]
 
