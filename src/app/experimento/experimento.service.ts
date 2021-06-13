@@ -37,7 +37,7 @@ export class ExperimentoService {
     }
 
     var experimento = { command: comando };
-    return this.http.post<any>(this.API, experimento)
+    return this.http.post<any>(this.API, experimento);
   }
 
 }
