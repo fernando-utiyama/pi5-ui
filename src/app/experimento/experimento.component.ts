@@ -46,7 +46,7 @@ export class ExperimentoComponent implements OnInit {
   }
 
   consulta(id: number) {
-    const on$ = timer(1000, 180);
+    const on$ = timer(1000, 240);
     on$.subscribe((d) =>     
     this.experimentoService.getResponse(id).subscribe(
       novoresultado => {
