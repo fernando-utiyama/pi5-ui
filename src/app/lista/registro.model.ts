@@ -1,5 +1,5 @@
 export interface Registro {
-  id: string;
+  id: number;
   dateTime: string;
   command: string;
   medidas: string;

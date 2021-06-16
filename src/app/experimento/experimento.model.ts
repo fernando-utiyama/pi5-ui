@@ -1,5 +1,5 @@
 export class Experimento {
-  id!: string;
+  id!: number;
   dateTime!: string;
   command!: string;
   medidas!: string;

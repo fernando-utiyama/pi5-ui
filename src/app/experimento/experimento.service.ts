@@ -1,12 +1,15 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Experimento } from './experimento.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExperimentoService {
 
-  private readonly API = 'https://univesp-campinas-pi5.herokuapp.com/api/request';
+  private readonly APIPOST = 'https://univesp-campinas-pi5.herokuapp.com/api/request';
+
+  private readonly APIGET = 'https://univesp-campinas-pi5.herokuapp.com/api/request';
 
   constructor(private http: HttpClient) {
 
@@ -37,7 +40,12 @@ export class ExperimentoService {
     }
 
     var experimento = { command: comando };
-    return this.http.post<any>(this.API, experimento);
+    return this.http.post<Experimento>(this.APIPOST, experimento);
+  }
+
+  getResponse(id: number) {
+    const params = new HttpParams().append('id', id);
+    return this.http.get<Experimento>(this.APIGET, {params}); 
   }
 
 }
