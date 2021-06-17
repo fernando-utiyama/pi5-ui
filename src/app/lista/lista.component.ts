@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ListaService } from './lista.service';
 import { Registro } from './registro.model';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-lista',
@@ -14,12 +15,16 @@ export class ListaComponent implements OnInit {
   constructor(private listaService: ListaService) { }
 
   ngOnInit(): void {
-    this.listaService.list().subscribe(
-      data => {
-        this.registros = data;
-      },
-      error => { console.log(error)}
-    );
+    const on$ = timer(2000, 240);
+    on$.subscribe((d) =>
+      this.listaService.list().subscribe(
+        data => {
+          this.registros = data;
+        },
+        error => { console.log(error)}
+      )
+    );     
+
   }
 
   experimento() {
