@@ -15,7 +15,7 @@ export class ListaComponent implements OnInit {
   constructor(private listaService: ListaService) { }
 
   ngOnInit(): void {
-    const on$ = timer(2000, 240);
+    const on$ = timer(1000, 5000);
     on$.subscribe((d) =>
       this.listaService.list().subscribe(
         data => {
