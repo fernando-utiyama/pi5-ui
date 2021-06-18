@@ -18,10 +18,10 @@
 
 .footer {  
   display: flex;
+  margin-top: 10px;
 }
 
 .container {
-
   padding: 15px;
   margin: 0 auto;
 }
