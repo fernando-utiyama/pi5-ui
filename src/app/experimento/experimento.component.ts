@@ -47,15 +47,17 @@ export class ExperimentoComponent implements OnInit {
 
   consulta(id: number) {
     const on$ = timer(1000, 1000);
-    on$.subscribe((d) =>     
-    this.experimentoService.getResponse(id).subscribe(
-      novoresultado => {
-        this.status = novoresultado.arduinoStatus;
-        this.medidas = novoresultado.medidas;
-        console.log('status', this.status);
-        console.log('id', this.id);
-      }
-    ));
+    if (this.medidas == undefined) {
+      on$.subscribe((d) =>     
+      this.experimentoService.getResponse(id).subscribe(
+        novoresultado => {
+          this.status = novoresultado.arduinoStatus;
+          this.medidas = novoresultado.medidas;
+          console.log('status', this.status);
+          console.log('id', this.id);
+        }
+      ));
+    }
   }
 
   ngOnInit(): void {
