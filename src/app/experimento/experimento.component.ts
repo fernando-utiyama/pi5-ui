@@ -57,9 +57,6 @@ export class ExperimentoComponent implements OnInit {
         console.log('id', this.id);
       }
     ));
-    if (this.medidas == undefined || this.medidas == null) {
-      
-    }
   }
 
   ngOnInit(): void {
