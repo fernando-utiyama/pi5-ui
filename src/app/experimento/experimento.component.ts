@@ -1,6 +1,7 @@
 import { ExperimentoService } from './experimento.service';
 import { Component, OnInit } from '@angular/core';
 import { timer } from 'rxjs';
+import { takeUntil, takeWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'app-experimento',
@@ -17,7 +18,7 @@ export class ExperimentoComponent implements OnInit {
   peso2: boolean = false;
 
   medidas: string | undefined;
-  status: string | undefined;  
+  status: string | undefined  
   id: number | undefined;
 
   constructor(private experimentoService: ExperimentoService) { }
@@ -47,22 +48,21 @@ export class ExperimentoComponent implements OnInit {
 
   consulta(id: number) {
     const on$ = timer(1000, 1000);
-    if (this.medidas == undefined) {
-      on$.subscribe((d) =>     
-      this.experimentoService.getResponse(id).subscribe(
-        novoresultado => {
-          this.status = novoresultado.arduinoStatus;
-          this.medidas = novoresultado.medidas;
-          console.log('status', this.status);
-          console.log('id', this.id);
-        }
-      ));
+    on$.subscribe((d) =>     
+    this.experimentoService.getResponse(id).subscribe(
+      novoresultado => {
+        this.status = novoresultado.arduinoStatus;
+        this.medidas = novoresultado.medidas;
+        console.log('status', this.status);
+        console.log('id', this.id);
+      }
+    ));
+    if (this.medidas == undefined || this.medidas == null) {
+      
     }
   }
 
   ngOnInit(): void {
   }
-
-
 
 }
