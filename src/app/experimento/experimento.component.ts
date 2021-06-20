@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { timer } from 'rxjs';
 
 import { ExperimentoService } from './experimento.service';
@@ -21,7 +21,7 @@ export class ExperimentoComponent implements OnInit {
   medidas: string | undefined;
   status: string | undefined  
   id: number | undefined;
-  constructor(private experimentoService: ExperimentoService, private router: Router) { }
+  constructor(private experimentoService: ExperimentoService) { }
 
   enviar() {
     this.isButtonVisible = false;
@@ -60,12 +60,7 @@ export class ExperimentoComponent implements OnInit {
     ));
   }
 
-  ngOnInit() {
-    this.router.events.subscribe((event: any) => {
-        if (event instanceof NavigationEnd) {
-            console.log('navegação terminou');
-        }
-    });
+  ngOnInit(): void {
   }
-  
+
 }

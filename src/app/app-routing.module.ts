@@ -6,12 +6,12 @@ import { ExperimentoComponent } from './experimento/experimento.component';
 const routes: Routes = [
   {path: '', component: ListaComponent},
   {path: 'lista', component: ListaComponent},
-  {path: 'experimento',component: ExperimentoComponent, runGuardsAndResolvers: 'always'}
+  {path: 'experimento',component: ExperimentoComponent}
 ]
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 
