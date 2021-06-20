@@ -1,16 +1,17 @@
-import { ExperimentoService } from './experimento.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { timer } from 'rxjs';
-import { takeUntil, takeWhile } from 'rxjs/operators';
+
+import { ExperimentoService } from './experimento.service';
 
 @Component({
   selector: 'app-experimento',
   templateUrl: './experimento.component.html',
   styleUrls: ['./experimento.component.css']
 })
-export class ExperimentoComponent implements OnInit {
+export class ExperimentoComponent implements OnInit, OnDestroy {
 
-  loading: boolean = false;
+  isButtonVisible: boolean = true;
 
   volume1: boolean = false;
   volume2: boolean = false;
@@ -20,10 +21,10 @@ export class ExperimentoComponent implements OnInit {
   medidas: string | undefined;
   status: string | undefined  
   id: number | undefined;
-
-  constructor(private experimentoService: ExperimentoService) { }
+  constructor(private experimentoService: ExperimentoService, private router: Router) { }
 
   enviar() {
+    this.isButtonVisible = false;
     this.experimentoService.postCommand(this.volume1, this.volume2, this.peso1, this.peso2)
     .subscribe(
       resultado => {
@@ -59,7 +60,18 @@ export class ExperimentoComponent implements OnInit {
     ));
   }
 
-  ngOnInit(): void {
+  exit() {
+    window.location.reload();
   }
+
+  ngOnInit() {
+    this.router.events.subscribe((event: any) => {
+        if (event instanceof NavigationEnd) {
+            console.log('navegação terminou');
+        }
+    });
+  }
+
+  ngOnDestroy(): void{}
 
 }
