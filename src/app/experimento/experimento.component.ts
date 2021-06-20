@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { timer } from 'rxjs';
 
@@ -9,7 +9,7 @@ import { ExperimentoService } from './experimento.service';
   templateUrl: './experimento.component.html',
   styleUrls: ['./experimento.component.css']
 })
-export class ExperimentoComponent implements OnInit, OnDestroy {
+export class ExperimentoComponent implements OnInit {
 
   isButtonVisible: boolean = true;
 
@@ -60,10 +60,6 @@ export class ExperimentoComponent implements OnInit, OnDestroy {
     ));
   }
 
-  exit() {
-    window.location.reload();
-  }
-
   ngOnInit() {
     this.router.events.subscribe((event: any) => {
         if (event instanceof NavigationEnd) {
@@ -71,7 +67,5 @@ export class ExperimentoComponent implements OnInit, OnDestroy {
         }
     });
   }
-
-  ngOnDestroy(): void{}
-
+  
 }
