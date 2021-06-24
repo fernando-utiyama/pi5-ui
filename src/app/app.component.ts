@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
     <!-- logo -->
     <div class="navbar">
       <a class="navbar-item">
-        <img src='/assets/EngLabs.jpeg'>
+        <img src='/assets/EngLabs.jpeg' style="  max-width: 100%; height: auto;">
       </a>
     </div>
   </nav>
