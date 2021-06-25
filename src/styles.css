@@ -11,20 +11,25 @@
   font-family: "Roboto", sans-serif;
 }
 
-.navbar {  
+.navbar {
+  background-color: #011844;
   width: 100%;
+  height: auto;
   display: flex;
 }
 
 .footer {  
   display: flex;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-aling: center;
 }
 
 .container {
   padding: 15px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-field {
